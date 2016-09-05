@@ -21,7 +21,7 @@ import refinementOperator.RefinementOperator;
 //import samplers.DatasetAcquisition;
 //import samplers.DatasetGenerator;
 
-import evaluation.Evaluation;
+
 import evaluation.Parameters;
 import evaluation.metrics.separability.FeaturesDrivenDistance;
 //import evaluation.task.AffiliationPrediction;

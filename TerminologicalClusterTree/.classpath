@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="classifiers/|samplers/|DLLernerProva.java|evaluation/metrics/|evaluation/metrics/|evaluation/task/ClassMembershipPrediction.java|evaluation/task/AffiliationPrediction.java|evaluation/task/BiblicWomanPrediction.java|evaluation/task/GeoSkillsGenerator.java|evaluation/task/GeoSkillsPrediction.java|evaluation/task/MutagenicoPrediction.java|evaluation/task/PoliticianPrediction.java|evaluation/task/PoliticianGenerator.java" kind="src" path="src"/>
+	<classpathentry excluding="classifiers/|samplers/|DLLernerProva.java|evaluation/metrics/|evaluation/metrics/|evaluation/task/ClassMembershipPrediction.java|evaluation/task/AffiliationPrediction.java|evaluation/task/BiblicWomanPrediction.java|evaluation/task/GeoSkillsGenerator.java|evaluation/task/GeoSkillsPrediction.java|evaluation/task/MutagenicoPrediction.java|evaluation/task/PoliticianPrediction.java|evaluation/task/PoliticianGenerator.java|evaluation/AIFBConceptGenerator.java|evaluation/CarcinogesesisGenerator.java|evaluation/ConceptGenerator.java|evaluation/CrossValidation.java|evaluation/Evaluation.java" kind="src" path="src"/>
 	<classpathentry excluding="SeparabilityMeasure.java" kind="src" path="separability"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="lib" path="C:/dllearner-1.0-beta-3/lib/aopalliance-1.0.jar"/>

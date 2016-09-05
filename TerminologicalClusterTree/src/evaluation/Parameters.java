@@ -7,8 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import evaluation.designOfExperiments.AlgorithmName;
-import evaluation.designOfExperiments.ExperimentalDesign;
+
 import evaluation.task.Tasks;
 
 public class Parameters {
@@ -22,11 +21,9 @@ public class Parameters {
 		try {
 			input= new FileInputStream(new File("experiments.properties"));
 			props.load(input);
-			algorithm =  AlgorithmName.getClassifier(props.getProperty("algorithm"));
 			samplingrate = Double.parseDouble(props.getProperty("samplingrate"));
 			originalImbalance =Double.parseDouble(props.getProperty("originalImbalance"));
 			NFOLDS = Integer.parseInt(props.getProperty("NFOLDS"));
-			design = ExperimentalDesign.valueOf(props.getProperty("design"));
 			task = Tasks.valueOf( props.getProperty("task")); //AFFILIATIONPROBLEM; //POLITICIANPREDICTION; //MUTAGENICPREDICTION; //POLITICIANPREDICTION;//
 			NUMGENCONCEPTS = Integer.parseInt(props.getProperty("NUMGENCONCEPTS"));
 			beam = Integer.parseInt(props.getProperty("beam"));
@@ -59,12 +56,12 @@ public class Parameters {
 	}
 	
 	
-	public static  AlgorithmName algorithm;//AlgorithmName.DSTTerminologicalRandomForests;
+	//public static  AlgorithmName algorithm;//AlgorithmName.DSTTerminologicalRandomForests;
 	
 	public static double samplingrate;//0.5; //0.3; // 0.8 0.2 1
 	public static double originalImbalance;// 1;
 	public static int NFOLDS; //10;
-	public static ExperimentalDesign design;
+	//public static ExperimentalDesign design;
 	public static Tasks task ; //AFFILIATIONPROBLEM; //POLITICIANPREDICTION; //MUTAGENICPREDICTION; //POLITICIANPREDICTION;//
 	public static int NUMGENCONCEPTS;
 	public static int beam;
