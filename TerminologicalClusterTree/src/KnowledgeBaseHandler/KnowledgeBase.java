@@ -177,18 +177,18 @@ public class KnowledgeBase  {
 
 				}
 				else{ 
-					if (!Parameters.BINARYCLASSIFICATION){
+					//if (!Parameters.BINARYCLASSIFICATION){
 						if (reasoner.hasType(negTestConcepts[c],esempi[e])) 
 							classifications[c][e] = -1;
 					}
-					else
-						classifications[c][e]=-1;
+					//else
+						//classifications[c][e]=-1;
 					
 					n++;
 
-				}
+			//	}
 			}
-			System.out.printf(": %d  %d \n",p,n);
+		//	System.out.printf(": %d  %d \n",p,n);
 
 
 		}
@@ -443,7 +443,7 @@ public class KnowledgeBase  {
 		Description newConcept = null;
 
 		
-		if (!Parameters.BINARYCLASSIFICATION){
+		//if (!Parameters.BINARYCLASSIFICATION){
 			
 			// case A:  ALC and more expressive ontologies
 			do {
@@ -468,33 +468,33 @@ public class KnowledgeBase  {
 				//				System.out.printf("-->\t %s\n",newConcept);
 				//			} while (newConcept==null || !(reasoner.getIndividuals(newConcept,false).size() > 0));
 			} while ((reasoner.getIndividuals(newConcept).size()<=0));
-		}else{
-			// for less expressive ontologies ALE and so on (complemento solo per concetti atomici)
-			do {
-				newConcept = allConcepts[KnowledgeBase.generator.nextInt(allConcepts.length)];
-				if (KnowledgeBase.generator.nextDouble() < d) {
-					Description newConceptBase = getRandomConcept();
-					if (KnowledgeBase.generator.nextDouble() < d)
-						if (KnowledgeBase.generator.nextDouble() < 0.1) { // new role restriction
-							ObjectProperty role = allRoles[KnowledgeBase.generator.nextInt(allRoles.length)];
-							//					OWLDescription roleRange = (OWLDescription) role.getRange;
-
-							if (KnowledgeBase.generator.nextDouble() < d)
-								newConcept = new ObjectAllRestriction(role, newConceptBase);
-							else
-								newConcept = new ObjectSomeRestriction(role, newConceptBase);
-						}
-				} // else ext
-				else{ //if (KnowledgeBase.generator.nextDouble() > 0.8) {					
-					newConcept = new Negation(newConcept);
-				}
-				//				System.out.printf("-->\t %s\n",newConcept);
-				//			} while (newConcept==null || !(reasoner.getIndividuals(newConcept,false).size() > 0));
-			} while ((reasoner.getIndividuals(newConcept).size()<=0));
+//		}else{
+//			// for less expressive ontologies ALE and so on (complemento solo per concetti atomici)
+//			do {
+//				newConcept = allConcepts[KnowledgeBase.generator.nextInt(allConcepts.length)];
+//				if (KnowledgeBase.generator.nextDouble() < d) {
+//					Description newConceptBase = getRandomConcept();
+//					if (KnowledgeBase.generator.nextDouble() < d)
+//						if (KnowledgeBase.generator.nextDouble() < 0.1) { // new role restriction
+//							ObjectProperty role = allRoles[KnowledgeBase.generator.nextInt(allRoles.length)];
+//							//					OWLDescription roleRange = (OWLDescription) role.getRange;
+//
+//							if (KnowledgeBase.generator.nextDouble() < d)
+//								newConcept = new ObjectAllRestriction(role, newConceptBase);
+//							else
+//								newConcept = new ObjectSomeRestriction(role, newConceptBase);
+//						}
+//				} // else ext
+//				else{ //if (KnowledgeBase.generator.nextDouble() > 0.8) {					
+//					newConcept = new Negation(newConcept);
+//				}
+//				//				System.out.printf("-->\t %s\n",newConcept);
+//				//			} while (newConcept==null || !(reasoner.getIndividuals(newConcept,false).size() > 0));
+//			} while ((reasoner.getIndividuals(newConcept).size()<=0));
 			
 			
 			
-		}
+//		}
 
 		return newConcept;				
 	}
