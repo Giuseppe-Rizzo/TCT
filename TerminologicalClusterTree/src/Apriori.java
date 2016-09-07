@@ -48,7 +48,7 @@ public class Apriori {
 			 return generateCandidate(candidates, itemsetSize+1, length);
 			
 		}else{
-			System.out.println("Sono qui: "+ itemsetSize);
+			//System.out.println("Sono qui: "+ itemsetSize);
 			if (itemsetSize<=length){
 			ArrayList<HashSet<Description>>  newCandidates= new ArrayList<HashSet<Description>>();
 			 // definire passo ricorsivo

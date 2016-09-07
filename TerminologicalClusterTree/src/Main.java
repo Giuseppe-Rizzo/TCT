@@ -58,8 +58,9 @@ static KnowledgeBaseHandler.KnowledgeBase kb;
 		final NamedClass[] classes = kb.getClasses();
 		FeaturesDrivenDistance.preLoadPi(reasoner, classes, individuals);
 		FeaturesDrivenDistance.computeFeatureEntropies(reasoner, classes);
-		
+		System.out.println( "************************Discovering disjointntness axioms ********** ");
 		if (args[0].equalsIgnoreCase("apriori")){
+		System.out.println("Learning algorithm: A priori");
 			Apriori apriori= new Apriori(reasoner, classes, individuals);
 			ArrayList<HashSet<Description>> arrayList = new ArrayList<HashSet<Description>>();
 			ArrayList<HashSet<Description>> arrayList2 = new ArrayList<HashSet<Description>>();
@@ -75,10 +76,10 @@ static KnowledgeBaseHandler.KnowledgeBase kb;
 					arrayList2.add(hashSet);
 
 			} 		
-			System.out.println("Axioms (a priori): "+ arrayList2.size());
-		}
+			System.out.println("Number of axioms : "+ arrayList2.size());
+ 	}
 		else if (args[0].equalsIgnoreCase("tct")){	
-			//TODO da decommentare	
+//			//TODO da decommentare	
 			TCTInducer2 t = new TCTInducer2(kb);
 			RefinementOperator op = new RefinementOperator(kb);
 			ArrayList<Integer> list= new ArrayList<Integer>();
@@ -95,8 +96,8 @@ static KnowledgeBaseHandler.KnowledgeBase kb;
 		}
 		else{
 			System.out.println("Please, insert one of the following parameters:");
-			System.out.println( "'apriori' - for running the association rule mining");
-			System.out.println("'tct- for running the terminological cluster tree algorithm");
+			System.out.println( "'apriori' - for running the association rule mining algorithm");
+			System.out.println("'tct- for running the terminological cluster tree induction algorithm");
 			System.out.println("corr- for running the negative correlation algorithm ");
 			
 		}
