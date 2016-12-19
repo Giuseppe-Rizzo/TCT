@@ -74,7 +74,6 @@ static KnowledgeBaseHandler.KnowledgeBase kb;
 				}
 				if (disjoint)
 					arrayList2.add(hashSet);
-
 			} 		
 			System.out.println("Number of axioms : "+ arrayList2.size());
  	}
